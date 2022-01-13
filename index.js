@@ -16,20 +16,22 @@ console.log('selecting drivers');
 
 
 //function4- not passing?
-function creatFareMultiplier(fare, number) {
-    console.log('fare charge')
-    return (fare, number) => (fare * number);
+function createFareMultiplier(number) {
+    return function (integer) {
+        return (integer * number)
+    }
 }
 
 //function5
-const fareDouble = createFareMultiplier(2);
+const fareDoubler = createFareMultiplier(2);
 
 //function6
-const fareTriple = function() {
-    return createFareMultiplier(fare, 3)
-}
+const fareTripler = createFareMultiplier(3)
+
 
 //function 7
 function selectDifferentDrivers(drivers, selectingDrivers) {
-    return [returnFirstTwoDrivers, returnLastTwoDrivers];
-}
+     return selectingDrivers(drivers) 
+         
+     }
+
